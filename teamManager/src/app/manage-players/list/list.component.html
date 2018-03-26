@@ -1,0 +1,37 @@
+<div class="table-container">
+  <h2>Player List</h2>
+  <div class="row">
+    <div class="col-md-12 manage-player-container">
+      <ul class="nav">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/players/list">List</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/players/add">Add Player</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <table class="table table-striped">
+        <thead class="thead-dark">
+          <tr>
+            <th>Player Name</th>
+            <th>Preferred Position</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let player of players">
+            <td>{{ player.name }}</td>
+            <td>{{ player.position }}</td>
+            <td>
+              <button class="btn btn-danger" (click)="removePlayer($event, player._id)">Remove</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

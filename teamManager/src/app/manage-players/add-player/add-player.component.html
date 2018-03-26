@@ -1,0 +1,33 @@
+<div class="row">
+  <div class="col-md-12 manage-player-container">
+    <ul class="nav">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/players/list">List</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/players/add">Add Player</a>
+      </li>
+    </ul>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="form-container">
+      <h2>Add Player</h2>
+      <form (submit)="onSubmit($event, playerForm)" #playerForm="ngForm">
+        <div class="form-group">
+          <label for="name">Player Name:</label>
+          <input type="text" name="name" class="form-control" [(ngModel)]="player.name" #name="ngModel" minlength="2" required>
+          <span *ngIf="!name.valid && (name.touched || name.dirty)" class="text-danger">*Name must be at least 2 charaters long.</span>
+        </div>
+
+        <div class="form-group">
+          <label for="position">Preferred Position:</label>
+          <input type="text" name="position" class="form-control" [(ngModel)]="player.position">
+        </div>
+
+        <button [disabled]="!playerForm.valid" class="btn btn-primary mt-2" type="submit">Add</button>
+      </form>
+    </div>
+  </div>
+</div>

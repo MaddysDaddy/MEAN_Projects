@@ -1,0 +1,19 @@
+div.getuser {
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+  margin: .5em;
+  padding: 2em;
+  text-align: center;
+}
+
+div.avatar {
+  margin-bottom: 1em;
+}
+
+div.getuser h5 {
+  text-align: center;
+}
+
+div.final-result {
+  margin-top: 2em;
+}

@@ -1,0 +1,50 @@
+<div class="row battle-section">
+  <div class="col-md-6">
+
+    <div *ngIf="firstPlayer" class="getuser">
+      <div class="avatar">
+        <img src="{{ firstPlayer.avatar_url }}" alt="" class="img-fluid">
+      </div>
+      <h5>{{ firstPlayer.login }}</h5>
+    </div>
+
+    <div class="getuser" *ngIf="!firstPlayer">
+      <h2>Player 1</h2>
+      <form (submit)="getPlayerOne($event, playerOneForm)" #playerOneForm="ngForm">
+        <div class="form-group">
+          <label for="username">Username:</label>
+          <input type="text" name="username" class="form-control" [(ngModel)]="playerOne.username" #username="ngModel" required>
+          <span *ngIf="!username.valid && (username.touched || username.dirty)" class="text-danger">*This field is required!</span>
+          <span *ngIf="pOneError" class="text-danger error">*{{pOneError}}</span>
+        </div>
+        <button [disabled]="!playerOneForm.valid" class="btn btn-primary" type="submit">Get User</button>
+      </form>
+    </div>
+  </div>
+
+
+  <div class="col-md-6">
+    <div *ngIf="secondPlayer" class="getuser">
+      <div class="avatar">
+        <img src="{{ secondPlayer.avatar_url }}" alt="" class="img-fluid">
+      </div>
+      <h5>{{ secondPlayer.login }}</h5>
+    </div>
+
+    <div class="getuser" *ngIf="!secondPlayer">
+      <h2>Player 2</h2>
+      <form (submit)="getPlayerTwo($event, playerTwoForm)" #playerTwoForm="ngForm">
+        <div class="form-group">
+          <label for="username">Username:</label>
+          <input type="text" name="username" [(ngModel)]="playerTwo.username" #username="ngModel" required class="form-control">
+          <span *ngIf="!username.valid && (username.touched || username.dirty)" class="text-danger">*This field is required!</span>
+          <span *ngIf="pTwoError" class="text-danger">*{{ pTwoError }}</span>
+        </div>
+        <button [disabled]="!playerTwoForm.valid" class="btn btn-primary" type="submit">Get User</button>
+      </form>
+    </div>
+  </div>
+</div>
+<div *ngIf="firstPlayer && secondPlayer" class="row justify-content-center">
+  <button (click)="doBattle($event)" class="btn btn-lg btn-primary battle-btn mt-4">Battle!</button>
+</div>

@@ -1,0 +1,23 @@
+<div class="row rankings-section">
+  <div class="col-md-12">
+
+    <ul>
+      <li *ngFor="let player of players">
+        <div class="row">
+          <div class="col-md-4">
+            <div class="getuser">
+              <div class="avatar">
+                <img src="{{ player.avatar }}" alt="" class="img-fluid">
+              </div>
+              <h5>{{ player.username }}</h5>
+            </div>
+          </div>
+          <div class="col-md-8">
+            <h3>Score: {{ player.score }}</h3>
+          </div>
+        </div>
+      </li>
+    </ul>
+
+  </div>
+</div>

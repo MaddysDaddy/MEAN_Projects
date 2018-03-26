@@ -1,0 +1,23 @@
+/* STYLES FOR THE NOTE LIST */
+
+div.note-container {
+  background-color: #fff;
+  padding: 2em;
+  border: 1px solid #aeaeae;
+  border-radius: 5px;
+  height: 600px;
+  overflow-y: scroll;
+}
+
+div.note {
+  border: 1px solid #aeaeae;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-radius: 5px;
+}
+
+span.created {
+  font-size: 85%;
+  color: #aeaeae;
+  margin-right: 1em;
+}

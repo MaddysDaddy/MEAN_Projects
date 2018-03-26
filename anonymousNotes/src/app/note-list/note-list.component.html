@@ -1,0 +1,13 @@
+<div class="row justify-content-center">
+  <div class="col-md-10 note-container">
+
+    <div class="row note-item justify-content-center" *ngFor="let note of notes">
+      <div class="col-md-11 note">
+        <div class="row justify-content-end">
+          <span class="created">Noted on: {{ note.createdAt | date:'MMM d yyyy, h:mm:ss a' }}</span>
+        </div>
+        <p>{{ note.text }}</p>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,9 @@
+<div class="row justify-content-center">
+  <div class="col-md-10 note-container">
+    <form class="form-inline" (submit)="onSubmit($event, noteForm)" #noteForm="ngForm">
+      <label for="text" class="sr-only">Note:</label>
+      <input type="text" name="text" class="form-control mr-3 col-10" [(ngModel)]="note.text" minlength="4" required placeholder="Your Message">
+      <button type="submit" [disabled]="!noteForm.valid" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+</div>
